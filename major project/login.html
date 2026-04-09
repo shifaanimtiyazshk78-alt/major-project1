@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — OCPMS | Online Courier & Parcel Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">◉</span>
+        OCPMS
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="orders.html">Orders</a></li>
+        <li><a href="notice.html">Notice</a></li>
+        <li><a href="tracking.html">Tracking</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="login.html" class="active">Login</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Sign In</h1>
+        <p>Login to your account to book parcels and track your shipments.</p>
+      </div>
+    </section>
+
+    <section class="auth-section page-section">
+      <div class="container">
+        <div class="auth-form-wrapper">
+          <form class="auth-form" id="login-form">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+            <a href="support.html" class="auth-forgot">Forgot password?</a>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+          </form>
+          <p class="auth-switch">Don't have an account? <a href="registration.html">Register</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="orders.html">Orders</a>
+        <a href="notice.html">Notice</a>
+        <a href="tracking.html">Tracking</a>
+        <a href="support.html">Support</a>
+        <a href="registration.html">Registration</a>
+        <a href="admin.html">Admin</a>
+        <a href="login.html">Login</a>
+        <a href="logout.html">Logout</a>
+        <a href="/docs" target="_blank" rel="noopener">API docs</a>
+      </div>
+      <p>&copy; OCPMS — Online Courier & Parcel Management System</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+  <script src="auth-login.js"></script>
+</body>
+</html>

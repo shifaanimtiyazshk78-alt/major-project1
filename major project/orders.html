@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders — OCPMS | Online Courier & Parcel Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">◉</span>
+        OCPMS
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="orders.html" class="active">Orders</a></li>
+        <li><a href="notice.html">Notice</a></li>
+        <li><a href="tracking.html">Tracking</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Order hub</h1>
+        <p>Browse sample marketplace-style shipments across <strong>Pune</strong> — each card lists a <strong>tracking ID</strong> and a delivery area (NIBM Camp, Kondhwa, Baner, and more). Use that ID in <a href="tracking.html">Tracking</a> after you add a matching order in <a href="admin.html">Admin</a>.</p>
+      </div>
+    </section>
+
+    <section class="orders-page page-section">
+      <div class="container">
+        <p class="orders-disclaimer" role="note">
+          Demo listings only — brand names illustrate typical courier sources; OCPMS is not affiliated with these companies.
+        </p>
+        <p class="orders-location-help" role="note">
+          <strong>Finding a place in Google Maps:</strong> copy the <strong>Plus Code</strong> (Open Location Code) or the <strong>coordinates</strong> from any card and paste them into the Google Maps search bar. Plus Codes are Google’s short location IDs for a specific area.
+        </p>
+
+        <div class="orders-toolbar">
+          <label class="orders-filter-label" for="ordersCompanyFilter">Show orders from</label>
+          <select id="ordersCompanyFilter" class="orders-filter-select" aria-label="Filter by retailer">
+            <option value="all">All companies</option>
+            <option value="amazon">Amazon</option>
+            <option value="flipkart">Flipkart</option>
+            <option value="meesho">Meesho</option>
+            <option value="myntra">Myntra</option>
+            <option value="nykaa">Nykaa</option>
+            <option value="reliance">Reliance Digital</option>
+            <option value="croma">Croma</option>
+            <option value="bigbasket">BigBasket</option>
+          </select>
+        </div>
+
+        <div class="orders-grid" id="ordersGrid" role="list">
+          <article class="order-card" data-company="amazon" role="listitem">
+            <span class="order-card__badge order-card__badge--amazon">Amazon</span>
+            <h2 class="order-card__title">USB-C fast charger — 65W</h2>
+            <p class="order-card__product">Electronics · Seller: TechNest Retail</p>
+            <dl class="order-card__meta">
+              <div><dt>Tracking ID</dt><dd><code>OCPMS-AMZ-1001</code></dd></div>
+              <div><dt>Location</dt><dd class="order-card__loc"><span class="order-card__pune">NIBM Camp · Pune</span><div class="order-card__codes"><p class="order-card__code-row"><span class="order-card__code-label">Plus Code</span> <code class="order-card__code" title="Paste into Google Maps search">7JCMFVQW+J2</code></p><p class="order-card__code-row"><span class="order-card__code-label">Coordinates</span> <code class="order-card__code" title="Latitude, longitude">18.4891, 73.8950</code></p></div><a href="https://www.google.com/maps/search/?api=1&amp;query=18.4891%2C73.8950" class="order-card__maps-link" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd></div>
+              <div><dt>Weight</dt><dd>0.4 kg</dd></div>
+              <div><dt>ETA</dt><dd>2–3 days</dd></div>
+            </dl>
+            <a href="tracking.html" class="order-card__link">Track with this ID</a>
+          </article>
+
+          <article class="order-card" data-company="amazon" role="listitem">
+            <span class="order-card__badge order-card__badge--amazon">Amazon</span>
+            <h2 class="order-card__title">Paperback — “Operations Management”</h2>
+            <p class="order-card__product">Books · Prime eligible</p>
+            <dl class="order-card__meta">
+              <div><dt>Tracking ID</dt><dd><code>OCPMS-AMZ-2044</code></dd></div>
+              <div><dt>Location</dt><dd class="order-card__loc"><span class="order-card__pune">Kondhwa Khurd · Pune</span><div class="order-card__codes"><p class="order-card__code-row"><span class="order-card__code-label">Plus Code</span> <code class="order-card__code" title="Paste into Google Maps search">7JCMFV9V+C2</code></p><p class="order-card__code-row"><span class="order-card__code-label">Coordinates</span> <code class="order-card__code" title="Latitude, longitude">18.4685, 73.8925</code></p></div><a href="https://www.google.com/maps/search/?api=1&amp;query=18.4685%2C73.8925" class="order-card__maps-link" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd></div>
+              <div><dt>Weight</dt><dd>0.6 kg</dd></div>
+              <div><dt>ETA</dt><dd>1–2 days</dd></div>
+            </dl>
+            <a href="tracking.html" class="order-card__link">Track with this ID</a>
+          </article>
+
+          <article class="order-card" data-company="flipkart" role="listitem">
+            <span class="order-card__badge order-card__badge--flipkart">Flipkart</span>
+            <h2 class="order-card__title">Bluetooth earbuds (TWS)</h2>
+            <p class="order-card__product">Audio · Flipkart Assured</p>
+            <dl class="order-card__meta">
+              <div><dt>Tracking ID</dt><dd><code>OCPMS-FK-8832</code></dd></div>
+              <div><dt>Location</dt><dd class="order-card__loc"><span class="order-card__pune">Kondhwa Budruk · Pune</span><div class="order-card__codes"><p class="order-card__code-row"><span class="order-card__code-label">Plus Code</span> <code class="order-card__code" title="Paste into Google Maps search">7JCMFV45+FG</code></p><p class="order-card__code-row"><span class="order-card__code-label">Coordinates</span> <code class="order-card__code" title="Latitude, longitude">18.4562, 73.8588</code></p></div><a href="https://www.google.com/maps/search/?api=1&amp;query=18.4562%2C73.8588" class="order-card__maps-link" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd></div>
+              <div><dt>Weight</dt><dd>0.2 kg</dd></div>
+              <div><dt>ETA</dt><dd>3–5 days</dd></div>
+            </dl>
+            <a href="tracking.html" class="order-card__link">Track with this ID</a>
+          </article>
+
+          <article class="order-card" data-company="flipkart" role="listitem">
+            <span class="order-card__badge order-card__badge--flipkart">Flipkart</span>
+            <h2 class="order-card__title">Stainless steel pressure cooker — 5L</h2>
+            <p class="order-card__product">Kitchen · Home appliances</p>
+            <dl class="order-card__meta">
+              <div><dt>Tracking ID</dt><dd><code>OCPMS-FK-5510</code></dd></div>
+              <div><dt>Location</dt><dd class="order-card__loc"><span class="order-card__pune">Wanowrie · Pune</span><div class="order-card__codes"><p class="order-card__code-row"><span class="order-card__code-label">Plus Code</span> <code class="order-card__code" title="Paste into Google Maps search">7JCMFVMF+RR</code></p><p class="order-card__code-row"><span class="order-card__code-label">Coordinates</span> <code class="order-card__code" title="Latitude, longitude">18.4845, 73.8745</code></p></div><a href="https://www.google.com/maps/search/?api=1&amp;query=18.4845%2C73.8745" class="order-card__maps-link" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd></div>
+              <div><dt>Weight</dt><dd>3.1 kg</dd></div>
+              <div><dt>ETA</dt><dd>4–6 days</dd></div>
+            </dl>
+            <a href="tracking.html" class="order-card__link">Track with this ID</a>
+          </article>
+
+          <article class="order-card" data-company="meesho" role="listitem">
+            <span class="order-card__badge order-card__badge--meesho">Meesho</span>
+            <h2 class="order-card__title">Cotton kurti set — pack of 2</h2>
+            <p class="order-card__product">Fashion · Reseller network</p>
+            <dl class="order-card__meta">
+              <div><dt>Tracking ID</dt><dd><code>OCPMS-MS-7721</code></dd></div>
+              <div><dt>Location</dt><dd class="order-card__loc"><span class="order-card__pune">Bibwewadi · Pune</span><div class="order-card__codes"><p class="order-card__code-row"><span class="order-card__code-label">Plus Code</span> <code class="order-card__code" title="Paste into Google Maps search">7JCMFVF8+RC</code></p><p class="order-card__code-row"><span class="order-card__code-label">Coordinates</span> <code class="order-card__code" title="Latitude, longitude">18.4745, 73.8660</code></p></div><a href="https://www.google.com/maps/search/?api=1&amp;query=18.4745%2C73.8660" class="order-card__maps-link" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd></div>
+              <div><dt>Weight</dt><dd>0.8 kg</dd></div>
+              <div><dt>ETA</dt><dd>5–8 days</dd></div>
+            </dl>
+            <a href="tracking.html" class="order-card__link">Track with this ID</a>
+          </article>
+
+          <article class="order-card" data-company="myntra" role="listitem">
+            <span class="order-card__badge order-card__badge--myntra">Myntra</span>
+            <h2 class="order-card__title">Running shoes — size UK 9</h2>
+            <p class="order-card__product">Footwear · Brand store</p>
+            <dl class="order-card__meta">
+              <div><dt>Tracking ID</dt><dd><code>OCPMS-MY-3390</code></dd></div>
+              <div><dt>Location</dt><dd class="order-card__loc"><span class="order-card__pune">Baner · Pune</span><div class="order-card__codes"><p class="order-card__code-row"><span class="order-card__code-label">Plus Code</span> <code class="order-card__code" title="Paste into Google Maps search">7JCMHQ5H+RX</code></p><p class="order-card__code-row"><span class="order-card__code-label">Coordinates</span> <code class="order-card__code" title="Latitude, longitude">18.5596, 73.7799</code></p></div><a href="https://www.google.com/maps/search/?api=1&amp;query=18.5596%2C73.7799" class="order-card__maps-link" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd></div>
+              <div><dt>Weight</dt><dd>1.0 kg</dd></div>
+              <div><dt>ETA</dt><dd>3–4 days</dd></div>
+            </dl>
+            <a href="tracking.html" class="order-card__link">Track with this ID</a>
+          </article>
+
+          <article class="order-card" data-company="nykaa" role="listitem">
+            <span class="order-card__badge order-card__badge--nykaa">Nykaa</span>
+            <h2 class="order-card__title">Skincare bundle — cleanser + SPF</h2>
+            <p class="order-card__product">Beauty · Fragile: handle with care</p>
+            <dl class="order-card__meta">
+              <div><dt>Tracking ID</dt><dd><code>OCPMS-NK-4412</code></dd></div>
+              <div><dt>Location</dt><dd class="order-card__loc"><span class="order-card__pune">Koregaon Park · Pune</span><div class="order-card__codes"><p class="order-card__code-row"><span class="order-card__code-label">Plus Code</span> <code class="order-card__code" title="Paste into Google Maps search">7JCMGVPV+FC</code></p><p class="order-card__code-row"><span class="order-card__code-label">Coordinates</span> <code class="order-card__code" title="Latitude, longitude">18.5362, 73.8936</code></p></div><a href="https://www.google.com/maps/search/?api=1&amp;query=18.5362%2C73.8936" class="order-card__maps-link" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd></div>
+              <div><dt>Weight</dt><dd>0.5 kg</dd></div>
+              <div><dt>ETA</dt><dd>2–4 days</dd></div>
+            </dl>
+            <a href="tracking.html" class="order-card__link">Track with this ID</a>
+          </article>
+
+          <article class="order-card" data-company="reliance" role="listitem">
+            <span class="order-card__badge order-card__badge--reliance">Reliance Digital</span>
+            <h2 class="order-card__title">Wireless mouse + keyboard combo</h2>
+            <p class="order-card__product">IT accessories · Store pickup available</p>
+            <dl class="order-card__meta">
+              <div><dt>Tracking ID</dt><dd><code>OCPMS-RD-9021</code></dd></div>
+              <div><dt>Location</dt><dd class="order-card__loc"><span class="order-card__pune">Viman Nagar · Pune</span><div class="order-card__codes"><p class="order-card__code-row"><span class="order-card__code-label">Plus Code</span> <code class="order-card__code" title="Paste into Google Maps search">7JCMHW97+5P</code></p><p class="order-card__code-row"><span class="order-card__code-label">Coordinates</span> <code class="order-card__code" title="Latitude, longitude">18.5679, 73.9143</code></p></div><a href="https://www.google.com/maps/search/?api=1&amp;query=18.5679%2C73.9143" class="order-card__maps-link" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd></div>
+              <div><dt>Weight</dt><dd>0.9 kg</dd></div>
+              <div><dt>ETA</dt><dd>2–3 days</dd></div>
+            </dl>
+            <a href="tracking.html" class="order-card__link">Track with this ID</a>
+          </article>
+
+          <article class="order-card" data-company="croma" role="listitem">
+            <span class="order-card__badge order-card__badge--croma">Croma</span>
+            <h2 class="order-card__title">Smart LED bulb — Wi-Fi</h2>
+            <p class="order-card__product">Smart home · Electronics</p>
+            <dl class="order-card__meta">
+              <div><dt>Tracking ID</dt><dd><code>OCPMS-CR-1188</code></dd></div>
+              <div><dt>Location</dt><dd class="order-card__loc"><span class="order-card__pune">Wakad · Pune</span><div class="order-card__codes"><p class="order-card__code-row"><span class="order-card__code-label">Plus Code</span> <code class="order-card__code" title="Paste into Google Maps search">7JCMHQX6+VX</code></p><p class="order-card__code-row"><span class="order-card__code-label">Coordinates</span> <code class="order-card__code" title="Latitude, longitude">18.5997, 73.7624</code></p></div><a href="https://www.google.com/maps/search/?api=1&amp;query=18.5997%2C73.7624" class="order-card__maps-link" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd></div>
+              <div><dt>Weight</dt><dd>0.15 kg</dd></div>
+              <div><dt>ETA</dt><dd>3–5 days</dd></div>
+            </dl>
+            <a href="tracking.html" class="order-card__link">Track with this ID</a>
+          </article>
+
+          <article class="order-card" data-company="bigbasket" role="listitem">
+            <span class="order-card__badge order-card__badge--bigbasket">BigBasket</span>
+            <h2 class="order-card__title">Grocery crate — staples + produce</h2>
+            <p class="order-card__product">Food · Temperature-sensitive slot</p>
+            <dl class="order-card__meta">
+              <div><dt>Tracking ID</dt><dd><code>OCPMS-BB-6603</code></dd></div>
+              <div><dt>Location</dt><dd class="order-card__loc"><span class="order-card__pune">Aundh · Pune</span><div class="order-card__codes"><p class="order-card__code-row"><span class="order-card__code-label">Plus Code</span> <code class="order-card__code" title="Paste into Google Maps search">7JCMHR25+63</code></p><p class="order-card__code-row"><span class="order-card__code-label">Coordinates</span> <code class="order-card__code" title="Latitude, longitude">18.5505, 73.8077</code></p></div><a href="https://www.google.com/maps/search/?api=1&amp;query=18.5505%2C73.8077" class="order-card__maps-link" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd></div>
+              <div><dt>Weight</dt><dd>8.5 kg</dd></div>
+              <div><dt>ETA</dt><dd>Same-day / next-day</dd></div>
+            </dl>
+            <a href="tracking.html" class="order-card__link">Track with this ID</a>
+          </article>
+
+          <article class="order-card" data-company="amazon" role="listitem">
+            <span class="order-card__badge order-card__badge--amazon">Amazon</span>
+            <h2 class="order-card__title">Yoga mat + foam roller</h2>
+            <p class="order-card__product">Sports · Oversized parcel</p>
+            <dl class="order-card__meta">
+              <div><dt>Tracking ID</dt><dd><code>OCPMS-AMZ-9900</code></dd></div>
+              <div><dt>Location</dt><dd class="order-card__loc"><span class="order-card__pune">Hadapsar · Pune</span><div class="order-card__codes"><p class="order-card__code-row"><span class="order-card__code-label">Plus Code</span> <code class="order-card__code" title="Paste into Google Maps search">7JCMFWWR+MJ</code></p><p class="order-card__code-row"><span class="order-card__code-label">Coordinates</span> <code class="order-card__code" title="Latitude, longitude">18.4967, 73.9416</code></p></div><a href="https://www.google.com/maps/search/?api=1&amp;query=18.4967%2C73.9416" class="order-card__maps-link" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd></div>
+              <div><dt>Weight</dt><dd>2.2 kg</dd></div>
+              <div><dt>ETA</dt><dd>3–5 days</dd></div>
+            </dl>
+            <a href="tracking.html" class="order-card__link">Track with this ID</a>
+          </article>
+
+          <article class="order-card" data-company="flipkart" role="listitem">
+            <span class="order-card__badge order-card__badge--flipkart">Flipkart</span>
+            <h2 class="order-card__title">Study desk lamp — LED dimmable</h2>
+            <p class="order-card__product">Home · Furniture &amp; lighting</p>
+            <dl class="order-card__meta">
+              <div><dt>Tracking ID</dt><dd><code>OCPMS-FK-2201</code></dd></div>
+              <div><dt>Location</dt><dd class="order-card__loc"><span class="order-card__pune">Hinjewadi Phase 2 · Pune</span><div class="order-card__codes"><p class="order-card__code-row"><span class="order-card__code-label">Plus Code</span> <code class="order-card__code" title="Paste into Google Maps search">7JCMHMRQ+FH</code></p><p class="order-card__code-row"><span class="order-card__code-label">Coordinates</span> <code class="order-card__code" title="Latitude, longitude">18.5912, 73.6889</code></p></div><a href="https://www.google.com/maps/search/?api=1&amp;query=18.5912%2C73.6889" class="order-card__maps-link" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd></div>
+              <div><dt>Weight</dt><dd>1.4 kg</dd></div>
+              <div><dt>ETA</dt><dd>4–7 days</dd></div>
+            </dl>
+            <a href="tracking.html" class="order-card__link">Track with this ID</a>
+          </article>
+        </div>
+
+        <p class="orders-footnote">
+          Create an order in <a href="admin.html">Admin</a> using the same <strong>tracking ID</strong> text to see live status and the Pune-area map on <a href="tracking.html">Tracking</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="orders.html">Orders</a>
+        <a href="notice.html">Notice</a>
+        <a href="tracking.html">Tracking</a>
+        <a href="support.html">Support</a>
+        <a href="registration.html">Registration</a>
+        <a href="admin.html">Admin</a>
+        <a href="login.html">Login</a>
+        <a href="logout.html">Logout</a>
+        <a href="/docs" target="_blank" rel="noopener">API docs</a>
+      </div>
+      <p>&copy; OCPMS — Online Courier & Parcel Management System</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+  <script src="orders.js"></script>
+</body>
+</html>

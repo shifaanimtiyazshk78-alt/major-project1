@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — OCPMS | Online Courier & Parcel Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">◉</span>
+        OCPMS
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="orders.html">Orders</a></li>
+        <li><a href="notice.html">Notice</a></li>
+        <li><a href="tracking.html">Tracking</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="admin.html" class="active">Admin</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Admin Dashboard</h1>
+        <p>Monitor services, database records, and operational entries for OCPMS.</p>
+      </div>
+    </section>
+
+    <section id="admin-gate" class="auth-section page-section">
+      <div class="container">
+        <div class="auth-form-wrapper admin-gate-card">
+          <p class="admin-gate-lead">Restricted area. Sign in with the admin access phrase to continue.</p>
+          <form class="auth-form" id="admin-gate-form">
+            <label for="admin-password">Admin access</label>
+            <input type="password" id="admin-password" name="admin-password" required placeholder="Enter access phrase" autocomplete="current-password">
+            <p class="admin-gate-hint">Demo phrase: <code>ocpms-admin</code></p>
+            <button type="submit" class="btn btn-primary btn-block">Open dashboard</button>
+          </form>
+          <p id="admin-gate-error" class="admin-form-error" role="alert" hidden></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="admin-dashboard" class="admin-dashboard page-section" hidden>
+      <div class="container admin-dashboard-inner">
+        <div class="admin-toolbar">
+          <div class="admin-toolbar-left">
+            <span class="admin-badge admin-badge-role">Administrator</span>
+            <button type="button" class="btn btn-secondary btn-sm" id="admin-sign-out">Sign out</button>
+          </div>
+          <div class="admin-toolbar-api">
+            <label for="api-base">API base URL</label>
+            <input type="url" id="api-base" placeholder="Blank = same origin (port 8000) or set URL" />
+            <button type="button" class="btn btn-primary btn-sm" id="admin-refresh">Refresh data</button>
+          </div>
+        </div>
+
+        <p id="admin-api-banner" class="admin-api-banner" role="status" hidden></p>
+
+        <div class="admin-order-sheet" id="admin-order-sheet">
+          <div class="admin-order-sheet__head">
+            <h2 class="admin-panel-title">Order status sheet</h2>
+            <p class="admin-order-sheet__intro">Shipment orders grouped by status. Figures update from the database when you refresh.</p>
+          </div>
+          <div class="admin-order-sheet__grid" role="table" aria-label="Order counts by status">
+            <div class="admin-order-sheet__col admin-order-sheet__col--pending">
+              <span class="admin-order-sheet__label">Pending</span>
+              <span class="admin-order-sheet__num" id="order-count-pending">—</span>
+            </div>
+            <div class="admin-order-sheet__col admin-order-sheet__col--failed">
+              <span class="admin-order-sheet__label">Failed</span>
+              <span class="admin-order-sheet__num" id="order-count-failed">—</span>
+            </div>
+            <div class="admin-order-sheet__col admin-order-sheet__col--complete">
+              <span class="admin-order-sheet__label">Complete</span>
+              <span class="admin-order-sheet__num" id="order-count-complete">—</span>
+            </div>
+          </div>
+          <p class="admin-order-sheet__total">Total orders: <strong id="order-count-total">—</strong></p>
+          <p id="admin-order-feedback" class="admin-order-feedback" role="status" hidden></p>
+        </div>
+
+        <div class="admin-stats">
+          <article class="admin-stat-card">
+            <h3>Database records</h3>
+            <p class="admin-stat-value" id="stat-count">—</p>
+            <p class="admin-stat-note">Items stored via Python API (SQLite)</p>
+          </article>
+          <article class="admin-stat-card">
+            <h3>Node bridge</h3>
+            <p class="admin-stat-value" id="stat-node">—</p>
+            <p class="admin-stat-note">Proxy to Python <code>/api/items</code></p>
+          </article>
+          <article class="admin-stat-card">
+            <h3>Services up</h3>
+            <p class="admin-stat-value" id="stat-up">—</p>
+            <p class="admin-stat-note">Python, Node, Go health</p>
+          </article>
+        </div>
+
+        <div class="admin-panels">
+          <div class="admin-panel">
+            <h2 class="admin-panel-title">Service status</h2>
+            <ul class="admin-service-list" id="admin-service-list"></ul>
+          </div>
+          <div class="admin-panel admin-panel-form">
+            <h2 class="admin-panel-title">Add record</h2>
+            <p class="admin-panel-desc">Creates a row in the backend database (e.g. internal parcel reference label).</p>
+            <form class="admin-inline-form" id="admin-add-form">
+              <input type="text" id="admin-add-title" name="title" required maxlength="255" placeholder="Title / reference label" />
+              <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+            <p id="admin-add-message" class="admin-form-message" role="status" hidden></p>
+          </div>
+          <div class="admin-panel admin-panel-form">
+            <h2 class="admin-panel-title">Add order</h2>
+            <p class="admin-panel-desc">Creates a courier order with an initial status (default pending).</p>
+            <form class="admin-order-add-form" id="admin-order-add-form">
+              <input type="text" id="admin-order-reference" name="reference" required maxlength="255" placeholder="Tracking / reference ID" />
+              <select id="admin-order-status-new" name="status" aria-label="Initial order status">
+                <option value="pending" selected>Pending</option>
+                <option value="failed">Failed</option>
+                <option value="complete">Complete</option>
+              </select>
+              <button type="submit" class="btn btn-primary">Add order</button>
+            </form>
+            <p id="admin-order-add-message" class="admin-form-message" role="status" hidden></p>
+          </div>
+        </div>
+
+        <div class="admin-table-wrap">
+          <div class="admin-table-head">
+            <h2 class="admin-panel-title">Orders</h2>
+          </div>
+          <div class="admin-table-scroll">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Reference</th>
+                  <th>Status</th>
+                  <th>Created</th>
+                  <th>Updated</th>
+                </tr>
+              </thead>
+              <tbody id="admin-orders-body">
+                <tr><td colspan="5" class="admin-table-empty">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="admin-table-wrap">
+          <div class="admin-table-head">
+            <h2 class="admin-panel-title">Recent records</h2>
+          </div>
+          <div class="admin-table-scroll">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Title</th>
+                  <th>Created</th>
+                </tr>
+              </thead>
+              <tbody id="admin-table-body">
+                <tr><td colspan="3" class="admin-table-empty">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="orders.html">Orders</a>
+        <a href="notice.html">Notice</a>
+        <a href="tracking.html">Tracking</a>
+        <a href="support.html">Support</a>
+        <a href="registration.html">Registration</a>
+        <a href="admin.html">Admin</a>
+        <a href="login.html">Login</a>
+        <a href="logout.html">Logout</a>
+        <a href="/docs" target="_blank" rel="noopener">API docs</a>
+      </div>
+      <p>&copy; OCPMS — Online Courier & Parcel Management System</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

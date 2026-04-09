@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — OCPMS | Online Courier & Parcel Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">◉</span>
+        OCPMS
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="orders.html">Orders</a></li>
+        <li><a href="notice.html">Notice</a></li>
+        <li><a href="tracking.html">Tracking</a></li>
+        <li><a href="support.html" class="active">Support</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Support & Contact</h1>
+        <p>Find answers in our FAQ or raise a support ticket.</p>
+      </div>
+    </section>
+
+    <section class="support-section page-section">
+      <div class="container">
+        <div class="support-grid">
+          <div class="faq-block">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>How do I track my parcel?</summary>
+                <p>Go to the <a href="tracking.html">Tracking</a> page and enter your Tracking ID. With the backend running, status comes from the database (create matching orders in <a href="admin.html">Admin</a>).</p>
+              </details>
+              <details class="faq-item">
+                <summary>How can I book a shipment?</summary>
+                <p>Register for an account and use the Parcel Booking Form. Enter sender and recipient details, parcel specifications, and select your service type to get an instant quote.</p>
+              </details>
+              <details class="faq-item">
+                <summary>What payment methods are accepted?</summary>
+                <p>We accept online payments via integrated gateways. Walk-in customers can also pay by cash at branch locations.</p>
+              </details>
+              <details class="faq-item">
+                <summary>How do I raise a support ticket?</summary>
+                <p>Use the contact form below. Select the relevant category and provide your Tracking ID (if applicable). Our team will respond within 24–48 hours.</p>
+              </details>
+            </div>
+          </div>
+          <div class="contact-block">
+            <h2 class="section-title">Raise a Support Ticket</h2>
+            <form class="contact-form">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="tracking">Tracking / Shipment Status</option>
+                <option value="booking">Booking / Quote</option>
+                <option value="complaint">Complaint</option>
+                <option value="other">Other</option>
+              </select>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <button type="submit" class="btn btn-primary">Submit Ticket</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="support-dev page-section">
+      <div class="container">
+        <h2 class="section-title">Frontend &amp; backend</h2>
+        <div class="support-dev-card">
+          <p>
+            Run the Python app from <code>backend/python_app</code> so the site and API share one server
+            (recommended):
+          </p>
+          <pre class="support-dev-cmd">cd backend/python_app &amp;&amp; uvicorn main:app --reload --host 127.0.0.1 --port 8000</pre>
+          <p>
+            Then open <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> — tracking, registration, and login call the API automatically.
+            Interactive API: <a href="/docs" target="_blank" rel="noopener">/docs</a>.
+          </p>
+          <p class="support-dev-muted">
+            If you open HTML files directly (<code>file://</code>), set the API URL via the Admin dashboard toolbar (saved in the browser) or ensure the backend runs at <code>http://127.0.0.1:8000</code>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="orders.html">Orders</a>
+        <a href="notice.html">Notice</a>
+        <a href="tracking.html">Tracking</a>
+        <a href="support.html">Support</a>
+        <a href="registration.html">Registration</a>
+        <a href="admin.html">Admin</a>
+        <a href="login.html">Login</a>
+        <a href="logout.html">Logout</a>
+        <a href="/docs" target="_blank" rel="noopener">API docs</a>
+      </div>
+      <p>&copy; OCPMS — Online Courier & Parcel Management System</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you! Your ticket has been submitted. We will respond within 24–48 hours.');
+    });
+  </script>
+</body>
+</html>

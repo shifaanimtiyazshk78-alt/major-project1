@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Parcel — OCPMS | Online Courier & Parcel Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">◉</span>
+        OCPMS
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="orders.html">Orders</a></li>
+        <li><a href="notice.html">Notice</a></li>
+        <li><a href="tracking.html" class="active">Tracking</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Track Your Parcel</h1>
+        <p>Enter your Tracking ID to view status, <strong>Google Maps</strong> links (route, rider, destination), and an optional embedded map when an API key is configured.</p>
+      </div>
+    </section>
+
+    <section class="tracking-section page-section">
+      <div class="container">
+        <div class="tracking-widget">
+          <form class="tracking-form" id="trackingForm">
+            <input type="text" id="trackingId" name="trackingId" placeholder="Enter your Tracking ID (e.g., OCPMS1234567890)" required>
+            <button type="submit" class="btn btn-primary">Track Parcel</button>
+          </form>
+        </div>
+        <div class="tracking-result" id="trackingResult">
+          <p class="tracking-hint">Enter a Tracking ID above to view shipment status and Google Maps (links to route, rider, and destination; embedded map if an API key is set).</p>
+        </div>
+        <div class="tracking-history" id="trackingHistory">
+          <div class="tracking-history__head">
+            <h3>All Order History</h3>
+            <p>Recent orders from the system with quick Google Maps access.</p>
+          </div>
+          <p class="tracking-history__clicked-msg" id="trackingHistoryClickedMsg" hidden></p>
+          <div class="tracking-history__list" id="trackingHistoryList">
+            <p class="tracking-hint">Loading order history…</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="orders.html">Orders</a>
+        <a href="notice.html">Notice</a>
+        <a href="tracking.html">Tracking</a>
+        <a href="support.html">Support</a>
+        <a href="registration.html">Registration</a>
+        <a href="admin.html">Admin</a>
+        <a href="login.html">Login</a>
+        <a href="logout.html">Logout</a>
+        <a href="/docs" target="_blank" rel="noopener">API docs</a>
+      </div>
+      <p>&copy; OCPMS — Online Courier & Parcel Management System</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+  <script src="tracking.js"></script>
+</body>
+</html>
